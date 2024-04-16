@@ -1,0 +1,417 @@
+:root {
+    font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+    line-height: 1.5;
+    font-weight: 400;
+
+    color-scheme: light dark;
+    color: rgba(255, 255, 255, 0.87);
+    background-color: #242424;
+
+    font-synthesis: none;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+/* http://meyerweb.com/eric/tools/css/reset/ 
+ v2.0 | 20110126
+ License: none (public domain)
+*/
+
+* {
+    box-sizing: border-box;
+}
+
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+    display: block;
+}
+
+body {
+    line-height: 1;
+}
+
+ol,
+ul {
+    list-style: none;
+}
+
+blockquote,
+q {
+    quotes: none;
+}
+
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+    content: '';
+    content: none;
+}
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+/* Header */
+
+.header {
+    background-color: #33333300;
+    color: #fff;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+}
+
+.header__container {
+    width: 80%;
+    margin: 0 auto;
+    padding: 15px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header__logo {
+    font-size: 1.5em;
+    text-shadow: 4px 4px 10px rgb(243, 0, 0);
+    display: none;
+}
+
+.header__logo svg {
+    margin: 0 0 -3px;
+}
+
+.header__nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+.header__nav li {
+    margin-right: 20px;
+}
+
+.header__nav a {
+    text-decoration: none;
+    color: #fff;
+}
+
+.header__buttons {
+    display: flex;
+}
+
+.header__button {
+    margin-left: 10px;
+    padding: 8px 15px;
+    background-color: white;
+    color: rgb(0, 0, 0);
+    border: 1px solid rgb(190, 170, 164);
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+/* Header */
+
+.banner {
+    width: 100%;
+    height: 70vh;
+    overflow: hidden;
+}
+
+.banner__image {
+    width: 100%;
+    filter: opacity(0.7) sepia(100%);
+}
+
+.banner__title {
+    position: absolute;
+    top: 30%;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 3rem;
+}
+
+.banner__description {}
+
+.banner__cup {
+    position: absolute;
+    top: 45%;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 3rem;
+    width: 400px;
+}
+
+/* Welcome */
+
+.welcome {
+    padding: 10rem 0 0;
+}
+
+.welcome__title {
+    text-align: center;
+    font-size: 1.5rem;
+    margin: 3rem 0;
+}
+
+/* Products */
+
+.products {
+    padding: 2rem 1rem;
+    background-color: #fffdf0;
+    color: #eeeeee;
+}
+
+.products__container {
+    max-width: 1200px;
+    margin: auto;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 3s ease, transform 0.5s ease;
+}
+
+.products__container.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.products__title {
+    font-size: 1.5rem;
+    color: brown;
+}
+
+.products__list {
+    padding: 2rem 0;
+    display: flex;
+    gap: 1rem;
+}
+
+.products__item {
+    text-align: center;
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+    border-radius: 10px;
+}
+
+.products__item img {
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+}
+
+.products__item img:hover {
+    scale: 1.5;
+}
+
+
+.products__item h4 {
+    position: absolute;
+    bottom: .5px;
+    padding: 1rem;
+    border-top: 3px solid #eee;
+    background-color: rgba(189, 182, 182, 0.288);
+    border-right: 3px solid #eee;
+    border-radius: 0 1rem 0 0;
+}
+
+/* Advantadges */
+
+.advantadges {
+    padding: 2rem 0;
+}
+
+.advantadges__container {
+    display: flex;
+    max-width: 1200px;
+    margin: auto;
+}
+
+.advantadges .card {
+    line-height: 1.5rem;
+}
+
+.advantadges h3 {
+    font-weight: 700;
+    margin: 1rem 0;
+}
+
+.advantadges p {}
+
+.advantadges {}
+
+.advantadges {}
+
+
+/* Store */
+
+.store {
+    padding: 5rem 1rem;
+    color: #eeeeee;
+}
+
+.store__container {
+    max-width: 1200px;
+    margin: auto;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 3s ease, transform 0.5s ease;
+}
+
+.store__container.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.store__title {
+    font-size: 1.5rem;
+    color: brown;
+}
+
+.store p {
+    margin: 1rem 0;
+    line-height: 1.5rem;
+    font-size: 1rem;
+}
+
+.store__list {
+    padding: 2rem 0rem;
+    display: flex;
+    gap: 1rem;
+}
+
+.store__item {
+    text-align: center;
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+    border-radius: 10px;
+}
+
+.store__item:last-child {
+    width: calc(100% + 50%);
+}
+
+.store__item img {
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+    scale: .9;
+}
+
+.store__item img:hover {
+    scale: 1;
+}
+
+/* Footer */
+
+.footer {
+    padding: .5rem;
+}
+
+.footer p {
+    font-size: .9rem;
+}
